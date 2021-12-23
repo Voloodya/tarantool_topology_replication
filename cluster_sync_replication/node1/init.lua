@@ -78,8 +78,11 @@ box.once("schema", function()
    print('box.once executed')
 end)
 
-box.schema.create_space('products', {is_sync= true})
-box.space.products:create_index('pkey')
+box.schema.create_space('products', {is_sync= true, if_not_exists=true})
+box.space.products:create_index('pkey', {if_not_exists=true})
+
+-- Признание инстанса Мастером
+box.ctl.promote()
 
 require('console').start()
 os.exit()
@@ -89,8 +92,9 @@ os.exit()
 
 -- error: The synchronous transaction queue doesn't belong to any instance
 
--- Признание инстанса Мастером
+-- Признание инстанса Мастером in console
 --box.ctl.promote()
+
 ---- box.space.products:put({1, 'one'})
 
 --tarantool> box.space.products:put({2, 'one'})
