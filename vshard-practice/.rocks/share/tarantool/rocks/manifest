@@ -1,0 +1,127 @@
+commands = {}
+dependencies = {
+   ["package-reload"] = {
+      ["scm-1"] = {
+         {
+            constraints = {
+               {
+                  op = "~>",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   },
+   vshard = {
+      ["scm-1"] = {
+         {
+            constraints = {
+               {
+                  op = "~>",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   }
+}
+modules = {
+   ["package.reload"] = {
+      "package-reload/scm-1"
+   },
+   ["vshard.cfg"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.consts"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.error"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.hash"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.heap"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.init"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.lua_gc"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.registry"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.replicaset"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.rlist"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.router.init"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.storage.init"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.storage.ref"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.storage.reload_evolution"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.storage.sched"] = {
+      "vshard/scm-1"
+   },
+   ["vshard.util"] = {
+      "vshard/scm-1"
+   }
+}
+repository = {
+   ["package-reload"] = {
+      ["scm-1"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               ["package.reload"] = "package/reload.lua"
+            }
+         }
+      }
+   },
+   vshard = {
+      ["scm-1"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               ["vshard.cfg"] = "vshard/cfg.lua",
+               ["vshard.consts"] = "vshard/consts.lua",
+               ["vshard.error"] = "vshard/error.lua",
+               ["vshard.hash"] = "vshard/hash.lua",
+               ["vshard.heap"] = "vshard/heap.lua",
+               ["vshard.init"] = "vshard/init.lua",
+               ["vshard.lua_gc"] = "vshard/lua_gc.lua",
+               ["vshard.registry"] = "vshard/registry.lua",
+               ["vshard.replicaset"] = "vshard/replicaset.lua",
+               ["vshard.rlist"] = "vshard/rlist.lua",
+               ["vshard.router.init"] = "vshard/router/init.lua",
+               ["vshard.storage.init"] = "vshard/storage/init.lua",
+               ["vshard.storage.ref"] = "vshard/storage/ref.lua",
+               ["vshard.storage.reload_evolution"] = "vshard/storage/reload_evolution.lua",
+               ["vshard.storage.sched"] = "vshard/storage/sched.lua",
+               ["vshard.util"] = "vshard/util.lua"
+            }
+         }
+      }
+   }
+}

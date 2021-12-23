@@ -1,0 +1,5 @@
+# Фреймворк для шардирования vshard
+tarantoolctl rocks install vshard
+
+# (*) Модуль для горячей перезагрузки
+tarantoolctl rocks install https://github.com/moonlibs/package-reload/raw/master/rockspecs/package-reload-scm-1.rockspec
