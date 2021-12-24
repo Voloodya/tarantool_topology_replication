@@ -2,6 +2,11 @@
 local schema = {}
 
 function schema.init()
+    -- Если запускаемся на реплике (moscow-replica, spb-replica) с хему применять не надо, схема отреплицируется с мастера
+    if box.info.ro then
+        return
+    end
+
     box.schema.user.create('sharding', {password = 'pass', if_not_exists = true})
 
     box.schema.space.create('citizens', {if_not_exists=true})
