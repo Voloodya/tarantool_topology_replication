@@ -21,8 +21,19 @@ schema.init()
 
 -- Создание и запуск роутера. На практике запускается отдельным Тарантулом. Мы запустим на том же узле
 -- Буутстрапит buckets on storage. Маршрутизирует по бакетам
-vshard.router.cfg(topology) -- options: bucket_count + sharding
+--vshard.router.cfg(topology) -- options: bucket_count + sharding
 ---------------------------------
+
+-- Создание и запуск роутера. На практике запускается отдельным Тарантулом. Мы запустим на том же узле
+-- Буутстрапит buckets on storage. Маршрутизирует по бакетам
+-- Роутеру указывается зона, в которой он запущен
+vshard.router.cfg({
+    bucket_count = topology.bucket_count,
+    sharding = topology.sharding,
+    weights = topology.weights,
+    zone='moscow',
+})
+
 
 require 'console'.start()
 os.exit()
